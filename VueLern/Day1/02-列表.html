@@ -1,0 +1,17 @@
+<div id="id">
+    <ul>
+        <li v-for="item in item_list">{{item}}</li>
+    </ul>
+</div>
+
+<script src="../static/js/vue.js"></script>
+
+<script>
+    let app = new Vue({
+        el:"#id",
+        data:{
+            message:"列表显示",
+            item_list:["海底总动员","超人不会飞","悲伤逆流成河","水浒传"]
+        }
+    })
+</script>
