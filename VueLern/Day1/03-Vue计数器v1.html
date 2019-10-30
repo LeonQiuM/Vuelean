@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div id="app-v1">
+    <h2>计数器：{{count}}</h2>
+    <button v-on:click="count++">+</button>
+    <button v-on:click="count--">-</button>
+</div>
+    
+<script src="../static/js/vue.js"></script>
+
+<script>
+    let app = new Vue({
+        el:"#app-v1",
+        data:{
+            count:0,
+        }
+    })
+    
+</script>
+</body>
+</html>
