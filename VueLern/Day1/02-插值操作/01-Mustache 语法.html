@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <h2>{{message}}</h2>
+        <h2>{{message}}</h2>
+
+        <h1>{{firstName +' '+ lastname}}</h1>
+        <!-- mastache 语法中不仅仅可以直接传递显示变量，还可以写简单的表达式 -->
+
+
+        <h2>{{counter-20}}</h2>
+        <h2>{{counter*20}}</h2>
+        <h2>{{counter/20}}</h2>
+        <h2>{{counter%30}}</h2>
+        <h2>{{counter>30}}</h2>
+        <h2>{{counter==30}}</h2>
+        <h2>{{counter!=30}}</h2>
+        <h2>{{counter>>30}}</h2>
+        <h2>{{counter<<2}}</h2>
+    </div>
+    
+    
+    <script src="../../static/js/vue.js"></script>
+    <script>
+        let app =  new Vue({
+            el:"#app",
+            data:{
+                message:"你好",
+                firstName:"kobe",
+                lastname:"bryant",
+                counter:100,
+            }
+        })
+    </script>
+    
+</body>
+</html>

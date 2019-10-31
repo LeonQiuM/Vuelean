@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=vue, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <h2 v-once>{{message}}</h2>
+        <!-- v-once 指令只用于第一次加载时显示，后面不再继续动态加载修改值 -->
+    </div>
+    
+    
+    
+    <script src="../../static/js/vue.js"></script>
+    <script>
+        let app =  new Vue({
+            el:"#app",
+            data:{
+                message:"你好"
+            }
+        })
+    </script>
+</body>
+</html>
