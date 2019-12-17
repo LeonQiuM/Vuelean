@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}</h2>
+    <img v-bind:src="imgURL" alt="">
+    <!-- 简写v-bind的方式为一个单冒号 -->
+    <a :href="googleADDR">Google一下</a>
+
+</div>
+<script src="../../static/js/vue.js"></script>
+
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            message:"你好啊",
+            imgURL:"https://img20.360buyimg.com/img/jfs/t1/103521/23/6835/423894/5df6f16bEd4da45da/e600ea44282998b8.jpg.webp",
+            googleADDR:"http://leoncode.cn"
+        }
+    })
+</script>
+
+</body>
+</html>
