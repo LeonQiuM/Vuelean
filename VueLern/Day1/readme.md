@@ -1,34 +1,46 @@
 ## 一、邂逅vue.js
-###1. 认识vue.js
+### 1. 认识vue.js
+```
+
     + 为什么要学习vue
     + 读音
     + 渐进式
     + vue特点
-###2. 安装VUE
+```
+### 2. 安装VUE
+```
     + cdn引入
     + 下载引入
     + npm安装
-    
-###3. vue初体验
-####3.1 hello vuejs
+```
+
+### 3. vue初体验
+
+#### 3.1 hello vuejs
+```
     + mustache语法
     + vue响应式
-    
-####3.2 vue列表展示
+```
+#### 3.2 vue列表展示
+```
     + v-for
     + 数组动态追加元素后，新的也可以在页面上渲染出来
-    
-####3.3 计数器例子
+```
+#### 3.3 计数器例子
+```
     + 事件监听
     + v-on:click="method"
     + 语法糖: @click="method"
-###4. vue中的MVVM
+```
+### 4. vue中的MVVM
 
-###5. 创建vue的options可以放那些
+### 5. 创建vue的options可以放那些
+```
 + el
 + data
 + methods
 + 生命周期函数
+```
 
 ## 二 插值语法
 + mustache 语法
