@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    数组语法中填写的是变量，具体的值需要到data里面去指定，无论是数组、还是对象方式都是可以跟其他的class共存的-->
+<!--    单引号是直接解析为字符串的，不加单引号会被变量值替换-->
+    <h2 class="title" :class="[active1,line,'alex']">{{ message }}</h2>
+    <h2 class="title" :class="getClasses()">{{ message }}</h2>
+</div>
+<script src="../../static/js/vue.js"></script>
+
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好啊",
+            active1: "aaaa",
+            line: "bbbbbb",
+        },
+        //使用methods方法一样的返回
+        methods: {
+            getClasses: function () {
+                return [this.active1,this.line,'alex']
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
