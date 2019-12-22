@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- stop修饰符的使用，阻止冒泡 -->
+        <div @click="divclick"> aaaaaa
+            <!-- 阻止冒泡,只执行 btn 的相关事件 -->
+            <button @click.stop="btnclick">按钮</button>
+        </div>
+
+        <!-- prevnet 修饰符, 阻止默认行为 -->
+        <form action="leon">
+            <input type="submit" value="提交" @click.prevent="submitclick">
+        </form>
+
+        <!-- 修饰符可以串联，@click.stop.prevent -->
+
+        <!-- 只当事件从特定的键触发是才会触发,监听某个键盘按键的点击 -->
+        <input type="text" @keyup.enter="keyup">
+
+        <!-- 自定义组件事件监听 native，不添加无法监听-->
+        <!-- <cpn @click.native></cpn> -->
+
+        <!-- 只监听一次 -->
+        <button @click.once="onececlick">只能点击一次</button>
+
+
+
+    </div>
+    
+    
+    <script src="../../static/js/vue.js"></script>
+    <script>
+        let app =  new Vue({
+            el:"#app",
+            data:{
+                message:"你好"
+            },
+            methods:{
+                btnclick(){
+                    console.log("btn")
+                },
+                divclick(){
+                    console.log("div")
+                },
+                submitclick(){
+                    console.log("只打印，不提交")
+                },
+                keyup(){
+                    console.log("key up")
+                },
+                onececlick(){
+                    console.log("只使用一次")
+                }
+            }
+        })
+    </script>
+</body>
+</html>
