@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 事件调用没有参数 -->
+        <button @click="btn1()">按钮 1</button>
+        <button @click="btn1">按钮 1</button>
+        <!-- 在我们事件定义时省略了小括号，当时方法本身需要一个参数 -->
+        <button @click="btn2('abcd')">按钮 2</button>
+        <!-- 需要参数单数不用括号不穿参数，传入的是浏览器生成的 MouseEvent 参数 -->
+        <button @click="btn2">按钮 2</button>
+        <!-- 除了需要MouseEvent，同时需要其他参数 -->
+        <!-- 如何手动回去MouseEvent对象 $ -->
+        <button @click="btn3(123,$event)">按钮 3</button>
+        <!--  -->
+    </div>
+    
+    
+    <script src="../../static/js/vue.js"></script>
+    <script>
+        let app =  new Vue({
+            el:"#app",
+            data:{
+                message:"你好"
+            },
+            methods:{
+                btn1(){
+                    console.log("btn1")
+                },
+                btn2(event){
+                    console.log("btn2:",event)
+                },
+                btn3(abc,event){
+                    console.log("btn3:",abc,event)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

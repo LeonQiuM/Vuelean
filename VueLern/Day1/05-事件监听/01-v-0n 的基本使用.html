@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+    <h2>{{message}}</h2>
+    <button v-on:click="message++">+</button>
+    <button v-on:click="message--">-</button>
+    </div>
+
+    <div id="app1">
+        <h2>{{message1}}</h2>
+        <button v-on:click="increment()">+</button>
+        <button v-on:click="decrement()">-</button>
+    </div>
+
+    <div id="app2">
+        <!-- v-on 语法糖 -->
+        <h2>{{message2}}</h2>
+        <button @click="increment1()">+</button>
+        <button @click="decrement1()">-</button>
+    </div>
+
+
+    
+    
+    <script src="../../static/js/vue.js"></script>
+    <script>
+        let app =  new Vue({
+            el:"#app",
+            data:{
+                message:0
+            }
+        })
+
+        let app1 =  new Vue({
+            el:"#app1",
+            data:{
+                message1:0
+            },
+            methods:{
+                increment(){
+                    this.message1++
+                },
+                decrement(){
+                    this.message1--
+                }
+            }
+        })
+        let app2 = new Vue({
+            el:"#app2",
+            data:{
+                message2:10
+            },
+            methods:{
+                increment1(){
+                    this.message2++
+                },
+                decrement1(){
+                    this.message2--
+                }
+            }
+        })
+    </script>
+</body>
+</html>
