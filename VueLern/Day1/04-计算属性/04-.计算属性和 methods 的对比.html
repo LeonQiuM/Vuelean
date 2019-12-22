@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- 1方法，直接拼接 -->
+    <h2>{{firstName}}  {{lastName}}</h2>
+    <!-- 2方法,使用methods -->
+    <!-- 二 methods 方法，多次使用，代码会被调用多次 -->
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <!-- 3 方法，使用 computed 属性 -->
+    <!-- computed属性多次调用，只会复用前面的值 -->
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    </div>
+    
+    
+    <script src="../../static/js/vue.js"></script>
+    <script>
+        let app =  new Vue({
+            el:"#app",
+            data:{
+                firstName:"Kobe",
+                lastName:"Bryant"
+            },
+            methods:{
+                getFullName:function(){
+                    console.log("on methods")
+                    return this.firstName+ " "+ this.lastName
+                }
+            },
+            computed: {
+                fullName:{
+                    // set: {
+                    // },
+                    get: function(){
+                        return this.firstName+" "+ this.lastName
+                    },
+                    set :function(newValue){
+                        const names = newValue.split(" ")
+                        this.firstName = names[0]
+                        this.lastName = names[1]
+                        console.log("in set",newValue)
+                    }
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
